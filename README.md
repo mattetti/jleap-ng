@@ -7,8 +7,46 @@ You can learn about the Leap Motion at [www.leapmotion.com](https://www.leapmoti
 
 This code is a work-in-progress, evolving as needed.
 
-Deatils about this and other Leap Motion hacking efforts will be documented at [Leap Hacking](http://leaphacking.com)
+Details about this and other Leap Motion hacking efforts will be documented at [Leap Hacking](http://leaphacking.com)
 
+
+Getting Started
+=====
+
+1. Set/export the `LEAP_SDK_HOME` environment variable to point to the
+   place where you have the leap SDK.
+
+On Linux/OS X: 
+```
+$ export LEAP_SDK_HOME='/opt/Leap_SDK'
+```
+
+2. Install [JRuby](http://jruby.org/) and add its bin folder to your
+   path.
+
+On Linux/OS X:
+```
+$ export PATH=$PATH:/opt/jruby/bin:
+```
+
+3. Execute the demo using JRuby and adding the Leap SDK to Java's path:
+
+On Linux/OS X:
+```
+$ jruby -J-Djava.library.path=$LEAP_SDK_HOME/lib jruby-example.rb
+```
+
+Windows users might want to wrap the secret sauce in a `.bat` file:
+
+```
+jruby -J-Djava.library.path=%LEAP_SDK_HOME%\lib\x64 %1
+```
+
+And use the wrapper to start the example file:
+
+```
+_runJrubyDemo.bat jruby-example.rb
+```
 
 
 Author
